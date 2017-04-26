@@ -48,8 +48,8 @@ function loadQuestion(qn) {
 }
                  
 function newQuestion() {
-  //Qn = Math.floor(Math.random()*totNumQuest)+1;
-  Qn = 1;
+  Qn = Math.floor(Math.random()*totNumQuest)+1;
+  //Qn = 1;
   loadQuestion(Qn);
 }
 
