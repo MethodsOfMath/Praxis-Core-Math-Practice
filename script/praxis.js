@@ -44,14 +44,14 @@ function loadQuestion(qn) {
     
   }
   document.getElementById("Question").innerHTML = question;
-  
-  document.getElementById("Khan").innerHTML = 'For more practice, visit <a href=\"' + kurl + '" target="_blank">' + kurl + '</a>';
+  var longKhanString = 'For more practice, visit <a href=\"' + kurl + '" target="_blank">' + kurl + '</a>';
+  document.getElementById("Khan").innerHTML = longKhanString;
   
 }
                  
 function newQuestion() {
-  Qn = Math.floor(Math.random()*totNumQuest)+1;
-  //Qn = 1;
+  //Qn = Math.floor(Math.random()*totNumQuest)+1;
+  Qn = 1;
   loadQuestion(Qn);
 }
 
@@ -64,7 +64,7 @@ function showAnswer() {
 }
 
 function checkAnswer() {
-  respo = document.getElementById("response").value;
+  respo = document.getElementById("Response").value;
   if (respo == answer) {
     document.getElementById("Answer").innerHTML = randomElementOf(praises);
   else {
