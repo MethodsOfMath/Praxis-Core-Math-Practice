@@ -1,3 +1,4 @@
+var answer = "blank";  
 var totNumQuest = 1;
 var Qn = 1;
 
@@ -5,6 +6,8 @@ var Qn = 1;
 var names = ["Scott", "Fred", "Elizabeth", "Kumar", "Harold", "Jensa", "Maria", "Beth", "Steve", "Harry", "Lucy", 
              "Teneala", "Henrietta", "Bernadette", "Delphinia", "Renea", "Paz", "Stephanie", "Sara", "Sarah", "Larry", 
              "Jerry", "Garry", "Gary"];
+var praises = ["Good job!", "Way to go!", "That is correct!", "Yippee!", "Yeah!", "Keep it up!"];
+var sorry = ["Your answer does not match our answer. It could be in the different format. Is it simplified? Try again."];
 
 function randomElementOf(theArray) {
   return theArray[Math.floor(Math.random() * theArray.length)];
@@ -42,8 +45,8 @@ function loadQuestion(qn) {
     
   }
   document.getElementById("Question").innerHTML = question;
-  
-  document.getElementById("Khan").innerHTML = 'For more practice, visit <a href=\"' + kurl + '" target="_blank">' + kurl + '</a>';
+  var longKhanString = 'For more practice, visit <a href=\"' + kurl + '" target="_blank">' + kurl + '</a>';
+  document.getElementById("Khan").innerHTML = longKhanString;
   
 }
                  
@@ -56,5 +59,19 @@ function newQuestion() {
 function sameQuestion() {
   loadQuestion(Qn);
 }
+
+function showAnswer() {
+  document.getElementById("Answer").innerHTML = answer;
+}
+
+
+function checkAnswer() {
+  respo = document.getElementById("Response").value;
+  if (respo == answer) {
+    document.getElementById("Answer").innerHTML = randomElementOf(praises);
+  } else {
+    document.getElementById("Answer").innerHTML = randomElementOf(sorry);
+  }
+ }
   
 newQuestion();
