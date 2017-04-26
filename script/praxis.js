@@ -5,6 +5,8 @@ var Qn = 1;
 var names = ["Scott", "Fred", "Elizabeth", "Kumar", "Harold", "Jensa", "Maria", "Beth", "Steve", "Harry", "Lucy", 
              "Teneala", "Henrietta", "Bernadette", "Delphinia", "Renea", "Paz", "Stephanie", "Sara", "Sarah", "Larry", 
              "Jerry", "Garry", "Gary"];
+var praises = ["Good job!", "Way to go!", "That is correct!", "Yippee!", "Yeah!", "Keep it up!"];
+var sorry = ["Your answer does not match our answer. It could be in the different format. Is it simplified? Try again."]
 
 function randomElementOf(theArray) {
   return theArray[Math.floor(Math.random() * theArray.length)];
@@ -56,5 +58,18 @@ function newQuestion() {
 function sameQuestion() {
   loadQuestion(Qn);
 }
+
+function showAnswer() {
+  document.getElementById("Answer").innerHTML = answer;
+}
+
+function checkAnswer() {
+  respo = document.getElementById("response").value;
+  if (respo == answer) {
+    document.getElementById("Answer").innerHTML = randomElementOf(praises);
+  else {
+    document.getElementBy("Answer").innerHTML = randomElementOf(sorry);
+  }
+ }
   
 newQuestion();
