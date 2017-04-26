@@ -37,5 +37,9 @@ newQuestion() {
   Qn = Math.floor(Math.random()*totNumQuest)+1;
   loadQuestion(Qn);
 }
+
+sameQuestion() {
+  loadQuestion(Qn);
+}
   
 newQuestion();
