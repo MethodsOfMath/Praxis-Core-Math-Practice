@@ -13,7 +13,7 @@ function randomElementOf(theArray) {
 function loadQuestion(qn) {
   if (qn == 1) {
   	
-    var sides = [4,6,8,12,20]
+    var sides = [4,6,8,12,20];
     var side = randomElementOf(sides);
     var name1 = randomElementOf(names);
     var rollN = Math.floor(Math.random() * 8) + 3;
