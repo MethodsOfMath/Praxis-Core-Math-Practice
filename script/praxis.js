@@ -1,7 +1,9 @@
 totNumQuest = 1;
 
 
-var names = ["Scott", "Fred", "Elizabeth", "Kumar", "Harold", "Jensa", "Maria", "Beth", "Steve", "Harry", "Lucy", "Teneala", "Henrietta", "Bernadette", "Delphinia", "Renea", "Paz", "Stephanie", "Sara", "Sarah", "Larry", "Jerry", "Garry", "Gary"];
+var names = ["Scott", "Fred", "Elizabeth", "Kumar", "Harold", "Jensa", "Maria", "Beth", "Steve", "Harry", "Lucy", 
+             "Teneala", "Henrietta", "Bernadette", "Delphinia", "Renea", "Paz", "Stephanie", "Sara", "Sarah", "Larry", 
+             "Jerry", "Garry", "Gary"];
 
 function = randomElementOf(theArray) {
   return theArray[Math.floor(Math.random() * theArray.length)];
@@ -28,7 +30,7 @@ function loadQuestion(qn) {
     kurl = "https://www.khanacademy.org/math/precalculus/prob-comb/basic-prob-precalc/e/probability_1";
   }
   document.getElementById("question").innerHTML = question;
-  document.getElementById("Khan").innerHTML = 'For more practice, visit <a href=\"' + kurl + '>' + kurl + '</a>';
+  document.getElementById("Khan").innerHTML = 'For more practice, visit <a href=\"' + kurl + '" target="_blank">' + kurl + '</a>';
 }
                  
 newQuestion() {
@@ -36,4 +38,4 @@ newQuestion() {
   loadQuestion(Qn);
 }
   
-  newQuestion();
+newQuestion();
