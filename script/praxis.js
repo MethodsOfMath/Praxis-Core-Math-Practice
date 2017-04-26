@@ -12,10 +12,11 @@ function randomElementOf(theArray) {
 
 function loadQuestion(qn) {
   if (qn == 1) {
+  	
     var sides = [4,6,8,12,20]
     var side = randomElementOf(sides);
     var name1 = randomElementOf(names);
-    var rollN = Math.floor(Math.random() * 8) + 2;
+    var rollN = Math.floor(Math.random() * 8) + 3;
     var rolls =[];
     var owside = Math.floor(Math.random()*side)+1;
 
@@ -23,15 +24,27 @@ function loadQuestion(qn) {
     question += "The rolls were: ";
     for (i = 0; i< rollN; i++) {
       rolls.push(Math.floor(Math.random()*side)+1);
-      question += rolls[i] + ", ";           
+      question += rolls[i]; 
+      if (i == rollN-1) {
+      	question += ". ";
+      } else if (i == rollN-2) {
+      question += ", and "; 
+      } else {
+       question += ", "; 
+      }
     }
-    question += ". What is the probability of rolling a " + owside + "?";
+    question += "What is the probability of rolling a " + owside + "?";
     question += "<br><br>Enter your answer as a fraction using the '/' symbol. i.e. 1/2.";
     answer = "1/" + side;
+    
+    
     kurl = "https://www.khanacademy.org/math/precalculus/prob-comb/basic-prob-precalc/e/probability_1";
+    
   }
   document.getElementById("Question").innerHTML = question;
+  
   document.getElementById("Khan").innerHTML = 'For more practice, visit <a href=\"' + kurl + '" target="_blank">' + kurl + '</a>';
+  
 }
                  
 function newQuestion() {
@@ -44,4 +57,4 @@ function sameQuestion() {
   loadQuestion(Qn);
 }
   
-function newQuestion();
+newQuestion();
