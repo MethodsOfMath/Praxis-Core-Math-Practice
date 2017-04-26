@@ -6,7 +6,7 @@ var names = ["Scott", "Fred", "Elizabeth", "Kumar", "Harold", "Jensa", "Maria", 
              "Teneala", "Henrietta", "Bernadette", "Delphinia", "Renea", "Paz", "Stephanie", "Sara", "Sarah", "Larry", 
              "Jerry", "Garry", "Gary"];
 var praises = ["Good job!", "Way to go!", "That is correct!", "Yippee!", "Yeah!", "Keep it up!"];
-var sorry = ["Your answer does not match our answer. It could be in the different format. Is it simplified? Try again."]
+var sorry = ["Your answer does not match our answer. It could be in the different format. Is it simplified? Try again."];
 
 function randomElementOf(theArray) {
   return theArray[Math.floor(Math.random() * theArray.length)];
@@ -15,7 +15,7 @@ function randomElementOf(theArray) {
 function loadQuestion(qn) {
   if (qn == 1) {
   	
-    var sides = [4,6,8,12,20]
+    var sides = [4,6,8,12,20];
     var side = randomElementOf(sides);
     var name1 = randomElementOf(names);
     var rollN = Math.floor(Math.random() * 8) + 3;
