@@ -1,12 +1,12 @@
 var totNumQuest = 1;
-var Qn = 1
+var Qn = 1;
 
 
 var names = ["Scott", "Fred", "Elizabeth", "Kumar", "Harold", "Jensa", "Maria", "Beth", "Steve", "Harry", "Lucy", 
              "Teneala", "Henrietta", "Bernadette", "Delphinia", "Renea", "Paz", "Stephanie", "Sara", "Sarah", "Larry", 
              "Jerry", "Garry", "Gary"];
 
-function = randomElementOf(theArray) {
+function randomElementOf(theArray) {
   return theArray[Math.floor(Math.random() * theArray.length)];
 }
 
@@ -34,14 +34,14 @@ function loadQuestion(qn) {
   document.getElementById("Khan").innerHTML = 'For more practice, visit <a href=\"' + kurl + '" target="_blank">' + kurl + '</a>';
 }
                  
-newQuestion() {
+function newQuestion() {
   //Qn = Math.floor(Math.random()*totNumQuest)+1;
   Qn = 1;
   loadQuestion(Qn);
 }
 
-sameQuestion() {
+function sameQuestion() {
   loadQuestion(Qn);
 }
   
-newQuestion();
+function newQuestion();
