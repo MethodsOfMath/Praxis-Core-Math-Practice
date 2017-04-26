@@ -1,3 +1,4 @@
+var answer = "blank";  
 var totNumQuest = 1;
 var Qn = 1;
 
@@ -50,8 +51,8 @@ function loadQuestion(qn) {
 }
                  
 function newQuestion() {
-  //Qn = Math.floor(Math.random()*totNumQuest)+1;
-  Qn = 1;
+  Qn = Math.floor(Math.random()*totNumQuest)+1;
+  //Qn = 1;
   loadQuestion(Qn);
 }
 
@@ -63,11 +64,12 @@ function showAnswer() {
   document.getElementById("Answer").innerHTML = answer;
 }
 
+
 function checkAnswer() {
   respo = document.getElementById("Response").value;
   if (respo == answer) {
     document.getElementById("Answer").innerHTML = randomElementOf(praises);
-  else {
+  } else {
     document.getElementById("Answer").innerHTML = randomElementOf(sorry);
   }
  }
