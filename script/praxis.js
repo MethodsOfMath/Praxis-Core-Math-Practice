@@ -68,7 +68,7 @@ function checkAnswer() {
   if (respo == answer) {
     document.getElementById("Answer").innerHTML = randomElementOf(praises);
   else {
-    document.getElementBy("Answer").innerHTML = randomElementOf(sorry);
+    document.getElementById("Answer").innerHTML = randomElementOf(sorry);
   }
  }
   
