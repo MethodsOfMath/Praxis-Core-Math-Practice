@@ -23,7 +23,7 @@ function loadQuestion(qn) {
     var rolls =[];
     var owside = Math.floor(Math.random()*side)+1;
 
-    question = name1 + " rolls a fair " + side + "-sided die. " + name1 + " rolls the dice " + rollN + " times. ";
+    question = name1 + " rolls a fair " + side + "-sided die " + rollN + " times. ";
     question += "The rolls were: ";
     for (i = 0; i< rollN; i++) {
       rolls.push(Math.floor(Math.random()*side)+1);
