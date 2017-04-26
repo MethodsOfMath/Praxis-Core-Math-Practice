@@ -30,7 +30,7 @@ function loadQuestion(qn) {
     answer = "1/" + side;
     kurl = "https://www.khanacademy.org/math/precalculus/prob-comb/basic-prob-precalc/e/probability_1";
   }
-  document.getElementById("question").innerHTML = question;
+  document.getElementById("Question").innerHTML = question;
   document.getElementById("Khan").innerHTML = 'For more practice, visit <a href=\"' + kurl + '" target="_blank">' + kurl + '</a>';
 }
                  
