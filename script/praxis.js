@@ -1,4 +1,5 @@
-totNumQuest = 1;
+var totNumQuest = 1;
+var Qn = 1
 
 
 var names = ["Scott", "Fred", "Elizabeth", "Kumar", "Harold", "Jensa", "Maria", "Beth", "Steve", "Harry", "Lucy", 
@@ -11,12 +12,12 @@ function = randomElementOf(theArray) {
 
 function loadQuestion(qn) {
   if (qn == 1) {
-    sides = [4,6,8,12,20]
-    side = randomElementOf(sides);
-    name1 = randomElementOf(names);
-    rollN = Math.floor(Math.random() * 8) + 2;
-    rolls =[];
-    owside = Math.floor(Math.random()*side)+1;
+    var sides = [4,6,8,12,20]
+    var side = randomElementOf(sides);
+    var name1 = randomElementOf(names);
+    var rollN = Math.floor(Math.random() * 8) + 2;
+    var rolls =[];
+    var owside = Math.floor(Math.random()*side)+1;
 
     question = name1 + " rolls a fair " + side + "-sided die. " + name1 + " rolls the dice " + rollN + " times. ";
     question += "The rolls were: ";
@@ -34,7 +35,8 @@ function loadQuestion(qn) {
 }
                  
 newQuestion() {
-  Qn = Math.floor(Math.random()*totNumQuest)+1;
+  //Qn = Math.floor(Math.random()*totNumQuest)+1;
+  Qn = 1;
   loadQuestion(Qn);
 }
 
