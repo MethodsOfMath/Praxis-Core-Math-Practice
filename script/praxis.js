@@ -6,7 +6,7 @@ var names = ["Scott", "Fred", "Elizabeth", "Kumar", "Harold", "Jensa", "Maria", 
              "Teneala", "Henrietta", "Bernadette", "Delphinia", "Renea", "Paz", "Stephanie", "Sara", "Sarah", "Larry", 
              "Jerry", "Garry", "Gary"];
 
-var praises = ["Good job!", "Way to go!", "That is correct!", "Yippee!", "Yeah!", "Keep it up!"];
+var praises = ["Good job!", "Way to go!", "That is correct!", "Yippee!", "Yeah!", "Excellent. Keep it up!"];
 var sorry = ["Your answer does not match our answer. It could be in the different format. Is it simplified? Try again.","Try again."];
 var vardvars = ['x','y','z','a','b','c','k','m','n'];
 var mc = ['A','B','C','D','E'];
