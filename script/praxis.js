@@ -67,7 +67,7 @@ function sameQuestion() {
 }
 
 function hideWord() {
-  document.getElementById("Resonse").value = "";
+  document.getElementById("Response").value = "";
 }
 
 function showAnswer() {
