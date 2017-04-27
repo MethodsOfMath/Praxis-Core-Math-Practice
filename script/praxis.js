@@ -2,10 +2,10 @@ var answer = "blank";
 var totNumQuest = 1;
 var Qn = 1;
 
-
 var names = ["Scott", "Fred", "Elizabeth", "Kumar", "Harold", "Jensa", "Maria", "Beth", "Steve", "Harry", "Lucy", 
              "Teneala", "Henrietta", "Bernadette", "Delphinia", "Renea", "Paz", "Stephanie", "Sara", "Sarah", "Larry", 
              "Jerry", "Garry", "Gary"];
+
 var praises = ["Good job!", "Way to go!", "That is correct!", "Yippee!", "Yeah!", "Keep it up!"];
 var sorry = ["Your answer does not match our answer. It could be in the different format. Is it simplified? Try again."];
 
@@ -15,7 +15,7 @@ function randomElementOf(theArray) {
 
 function loadQuestion(qn) {
     document.getElementById("Answer").innerHTML = "";
-}
+
   if (qn == 1) {
   	
     var sides = [4,6,8,12,20];
@@ -46,7 +46,7 @@ function loadQuestion(qn) {
     explain += 'Rolling a ' + owside + ' is one outcome out of ' + side;
     explain += " possiblities. Therefore, the probability that you will roll a " + owside + " is 1/" + side + ".";
     
-    
+  
     kurl = "https://www.khanacademy.org/math/precalculus/prob-comb/basic-prob-precalc/e/probability_1";
     
   }
