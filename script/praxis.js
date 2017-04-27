@@ -14,6 +14,8 @@ function randomElementOf(theArray) {
 }
 
 function loadQuestion(qn) {
+    document.getElementById("Answer").innerHTML = "";
+}
   if (qn == 1) {
   	
     var sides = [4,6,8,12,20];
