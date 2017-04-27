@@ -142,7 +142,7 @@ function loadQuestion(qn) {
     
         // if sign is positive, do not need negative signs before the numbers. 
         if (sign == "+") {
-          aS = "(" + a + sign + b + ")(" m + sign + m + "/" + D + ")";
+          aS = "(" + a + sign + b + ")(" + m + sign + m + "/" + D + ")";
         } else {
           aS = "(" + sign+ a + sign + b + ")(" + sign + m + sign + m + y + "/" + D + ")";
         } // close if else
