@@ -7,7 +7,7 @@ var names = ["Scott", "Fred", "Elizabeth", "Kumar", "Harold", "Jensa", "Maria", 
              "Jerry", "Garry", "Gary"];
 
 var praises = ["Good job!", "Way to go!", "That is correct!", "Yippee!", "Yeah!", "Keep it up!"];
-var sorry = ["Your answer does not match our answer. It could be in the different format. Is it simplified? Try again."];
+var sorry = ["Your answer does not match our answer. It could be in the different format. Is it simplified? Try again.","Try again."];
 var vardvars = ['x','y','z','a','b','c','k','m','n'];
 var mc = ['A','B','C','D','E'];
 
@@ -109,7 +109,11 @@ function checkAnswer(n) {
   if (respo == answer) {
     document.getElementById("Answer").innerHTML = randomElementOf(praises);
   } else {
-    document.getElementById("Answer").innerHTML = randomElementOf(sorry);
+    if (n==99) {
+    document.getElementById("Answer").innerHTML = sorry[0];
+    } else {
+      document.getElementById("Answer").innerHTML = sorry[1];
+    }
   }
  }
   
