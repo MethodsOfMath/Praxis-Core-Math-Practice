@@ -66,6 +66,7 @@ function loadQuestion(qn) {
     kurl = "https://www.khanacademy.org/math/precalculus/prob-comb/basic-prob-precalc/e/probability_1";
     
   }  else if (qn == 2) {
+       multipleChoice();
        answer = randomElementOf(mc);
        var y = randomElementOf(vardvars);
        var a = Math.floor(Math.random()*9)+1;
@@ -95,65 +96,67 @@ function loadQuestion(qn) {
           if (answer == mc[i]) {
             line[i] = "[" + mc[i] + "] " + aS;
           } else {
-            ySpot = Math.floor(Math.random()*4)+1;	// position of variable in expression		
-            line[i] = "[" + mc[i] + "] (";                          
-            if (Math.random() > 0.5) {				// negative sign
-              line[i] += '-';
-            }
-            line[i] += (Math.floor(Math.random()*A)+m).toString();	// number 1
-            if (ySpot == 1) {							// first variable positon
-        line[i] += y;
+              ySpot = Math.floor(Math.random()*4)+1;	// position of variable in expression		
+              line[i] = "[" + mc[i] + "] (";
+
+              if (Math.random() > 0.5) {				// negative sign
+                line[i] += '-';
+              }
+              line[i] += (Math.floor(Math.random()*A)+m).toString();	// number 1
+              if (ySpot == 1) {							// first variable positon
+                line[i] += y;
+              }
+              if (Math.random() > 0.5) {				// plus or minus
+                line[i] += '-';
+              } else {
+                line[i] += '+';
+              }
+
+              line[i] += (Math.floor(Math.random()*A)+m).toString(); 	// number 2
+
+              if (ySpot == 2) {							// second variable position
+                line[i] += y;
+              }
+
+              line[i] += ")(";
+              if (Math.random() > 0.5) {				// negative sign	
+                line[i] += '-';
+              }
+
+              line[i] += (Math.floor(Math.random()*A)+m).toString(); 	// number 3
+              if (ySpot == 3) {							// third variable position
+                line[i] += y;
+              }
+
+              if (Math.random() > 0.5) {				// plus or minus
+                line[i] += '-';
+              } else {
+                line[i] += '+';
+              }
+
+              line[i] += (Math.floor(Math.random()*A)+m).toString();	//  number 4
+              if (ySpot == 4) {							// fourth variable spot
+                line[i] += y;
+              }
+
+              line[i] += ")";
+          }
         }
-            if (Math.random() > 0.5) {				// plus or minus
-              line[i] += '-';
-            } else {
-              line[i] += '+';
-            }
-            
-            line[i] += (Math.floor(Math.random()*A)+m).toString(); 	// number 2
-            
-            if (ySpot == 2) {							// second variable position
-              line[i] += y;
-            }
-            
-            line[i] += ")(";
-            if (Math.random() > 0.5) {				// negative sign	
-              line[i] += '-';
-            }
-            
-            line[i] += (Math.floor(Math.random()*A)+m).toString(); 	// number 3
-            if (ySpot == 3) {							// third variable position
-              line[i] += y;
-            }
-            
-            if (Math.random() > 0.5) {				// plus or minus
-              line[i] += '-';
-            } else {
-              line[i] += '+';
-            }
-            
-            line[i] += (Math.floor(Math.random()*A)+m).toString();	//  number 4
-            if (ySpot == 4) {							// fourth variable spot
-              line[i] += y;
-            }
-            
-            line[i] += ")";
-          }
 
-          question = "Which expression equals " + A + sign + m + y + " " + randomElementOf(allThings); 
-          question += " values of " + y + "?<br><br>";
+        question = "Which expression equals " + A + sign + m + y + " " + randomElementOf(allThings); 
+        question += " values of " + y + "?<br><br>";
 
-          for (i = 0; i < line.length; i++) {
-            question += line[i] + "<br><br>";
-          }
-          kurl = "https://www.khanacademy.org/math/algebra/introduction-to-algebra/alg1-equivalent-expressions/e/";
-          kurl += "equivalent-forms-of-expressions-1";
+        for (i = 0; i < line.length; i++) {
+          question += line[i] + "<br><br>";
+        }
+        kurl = "https://www.khanacademy.org/math/algebra/introduction-to-algebra/alg1-equivalent-expressions/e/";
+        kurl += "equivalent-forms-of-expressions-1";
 
-          explain = "You do not necessarily need to use FOIL. Since there are no variables in one set of the parentheses, ";
-          explain += "You can simplify that first. Then you would only need to distribute the sum or difference. Note that ";
-          explain += "we need a term with " + m + y + ". We would need to divide by " + D + " and multiply by " + m;
-          explain += " to get " + m + y + " in choice " + answer ". The " + y;
-          explain += " term in the other options ends up being too large.";
+        explain = "You do not necessarily need to use FOIL. Since there are no variables in one set of the parentheses, ";
+        explain += "You can simplify that first. Then you would only need to distribute the sum or difference. Note that ";
+        explain += "we need a term with " + m + y + ". We would need to divide by " + D + " and multiply by " + m;
+        explain += " to get " + m + y + " in choice " + answer ". The " + y;
+        explain += " term in the other options ends up being too large.";
     }
   
   document.getElementById("Question").innerHTML = question;
