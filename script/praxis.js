@@ -30,9 +30,10 @@ function multipleChoice() {
   document.getElementById("AnswerArea").innerHTML = thingie;
 } // close function
 
+/*
 fuction equation2(y,A,m) {
     var ySpot = Math.floor(Math.random()*4)+1;	// position of variable in expression		
-    var eq = (";
+    var eq = "(";
 
     if (Math.random() > 0.5) {				// negative sign
       eq += '-';
@@ -83,6 +84,8 @@ fuction equation2(y,A,m) {
   eq += ")"; 
   return eq;
 }
+*/
+
 
 function loadQuestion(qn) {
     document.getElementById("Answer").innerHTML = "";
@@ -133,29 +136,29 @@ function loadQuestion(qn) {
        var aS = "";	// Answer Line
        var ySpot = 1;		// position of variable in expression
        var sign = "+";
-
+		
         // pick sign for answer
         if (Math.random() > 0.5) {
           sign = "+";
         } else { 
           sign = "-"; 
         } // close if else
-    
+    	
         // if sign is positive, do not need negative signs before the numbers. 
         if (sign == "+") {
-          aS = "(" + a + sign + b + ")(" + m + sign + m + "/" + D + ")";
+          aS = "(" + a + sign + b + ")(" + m + sign + m + y + "/" + D + ")";
         } else {
-          aS = "(" + sign+ a + sign + b + ")(" + sign + m + sign + m + y + "/" + D + ")";
+          aS = "(" + sign + a + sign + b + ")(" + sign + m + sign + m + y + "/" + D + ")";
         } // close if else
-
+		
         for (i = 0; i<line.length; i++) {
           if (answer == mc[i]) {
             line[i] = "[" + mc[i] + "] " + aS;
           } else {
-            line[i] = "[" + mc[i] + "] " + equation2(y,A,m);
+            line[i] = "[" + mc[i] + "] " + "equation2(y,A,m)";
           }
         }
-
+		
         question = "Which expression equals " + A + sign + m + y + " " + randomElementOf(allThings); 
         question += " values of " + y + "?<br><br>";
 
