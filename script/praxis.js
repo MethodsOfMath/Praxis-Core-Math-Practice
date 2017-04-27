@@ -34,31 +34,31 @@ function multipleChoice() {
 function equation2(y,A,m) {
     var ySpot = Math.floor(Math.random()*4);	// position of variable in expression		
     var eq = "(";
-	/*
+	
     if (Math.random() > 0.5) {				// negative sign
       eq += '-';
     } // close if
-
+	
     eq += (Math.floor(Math.random()*A)+m).toString();	// number 1
-
+	
     if (ySpot == 1) {							// first variable positon
       eq += y;
     } // close if
-
+	
     if (Math.random() > 0.5) {				// plus or minus
       eq += '-';
     } else {
       eq += '+';
     }
-
-    line[i] += (Math.floor(Math.random()*A)+m).toString(); 	// number 2
-
+	
+    eq += (Math.floor(Math.random()*A)+m).toString(); 	// number 2
+	
     if (ySpot == 2) {							// second variable position
       eq += y;
     }
-
+	
     eq += ")(";
-
+	
     // negative sign	
     if (Math.random() > 0.5) {				
       eq += '-';
@@ -80,7 +80,7 @@ function equation2(y,A,m) {
     if (ySpot == 0) {							// fourth variable spot
       eq += y;
     }
-  */
+ 
   eq += ")"; 
   return eq;
 }
@@ -131,8 +131,9 @@ function loadQuestion(qn) {
        var b = Math.floor(Math.random()*9)+1;		 
        var m = Math.floor(Math.random()*9)+1;		// multiple
        var D = a+b;		// divisor
-       var A = D*m;	  // Big number	
-       var line = mc;	 // multiple choice lines
+	   var c = Math.floor(Math.random()*9)+1;
+       var A = c*D;	  // Big number	
+       var line = new Array(mc.length);	 // multiple choice lines
        var aS = "";	// Answer Line
        var ySpot = 1;		// position of variable in expression
        var sign = "+";
@@ -146,9 +147,9 @@ function loadQuestion(qn) {
     	
         // if sign is positive, do not need negative signs before the numbers. 
         if (sign == "+") {
-          aS = "(" + a + sign + b + ")(" + m + sign + m + y + "/" + D + ")";
+          aS = "(" + a + sign + b + ")(" + c + sign + m + y + "/" + D + ")";
         } else {
-          aS = "(" + sign + a + sign + b + ")(" + sign + m + sign + m + y + "/" + D + ")";
+          aS = "(" + sign + a + sign + b + ")(" + sign + c + sign + m + y + "/" + D + ")";
         } // close if else
 		
         for (i = 0; i<line.length; i++) {
@@ -165,6 +166,7 @@ function loadQuestion(qn) {
         for (i = 0; i < line.length; i++) {
           question += line[i] + "<br><br>";
         }
+
         kurl = "https://www.khanacademy.org/math/algebra/introduction-to-algebra/alg1-equivalent-expressions/e/";
         kurl += "equivalent-forms-of-expressions-1";
 
