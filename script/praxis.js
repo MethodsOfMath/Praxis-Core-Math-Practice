@@ -39,6 +39,10 @@ function loadQuestion(qn) {
     question += "What is the probability of rolling a " + owside + "?";
     question += "<br><br>Enter your answer as a fraction using the '/' symbol. i.e. 1/2.";
     answer = "1/" + side;
+    explain = 'You can completely ignore the rolls. The probability does not depend on previous outcomes. ';
+    explain += 'The key word here is "fair." In order for a dice to be fair, each outcome must have the same probabilty. ';
+    explain += 'Rolling a ' + owside + ' is one outcome out of ' + side;
+    explain += " possiblities. Therefore, the probability that you will roll a " + owside + " is 1/" + side + ".";
     
     
     kurl = "https://www.khanacademy.org/math/precalculus/prob-comb/basic-prob-precalc/e/probability_1";
@@ -62,6 +66,10 @@ function sameQuestion() {
 
 function showAnswer() {
   document.getElementById("Answer").innerHTML = answer;
+}
+
+function getExplain() {
+    document.getElementById("Answer").innerHTML = explain;
 }
 
 
