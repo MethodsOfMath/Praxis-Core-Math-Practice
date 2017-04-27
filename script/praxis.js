@@ -24,7 +24,7 @@ function fillInTheBlank() {
 function multipleChoice() {
    var thingie = "";
    for (i = 0; i < mc.length; i++) {
-   var thingie += '<button onclick="checkAnswer('+ i + ')">' + mc[i] + '</button>';
+    thingie += '<button onclick="checkAnswer('+ i + ')">' + mc[i] + '</button>';
    }
   document.getElementById("AnswerArea").innerHTML = thingie;
 }
