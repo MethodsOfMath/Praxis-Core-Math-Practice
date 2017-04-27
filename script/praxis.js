@@ -30,16 +30,16 @@ function multipleChoice() {
   document.getElementById("AnswerArea").innerHTML = thingie;
 } // close function
 
-/*
-fuction equation2(y,A,m) {
-    var ySpot = Math.floor(Math.random()*4)+1;	// position of variable in expression		
-    var eq = "(";
 
+function equation2(y,A,m) {
+    var ySpot = Math.floor(Math.random()*4);	// position of variable in expression		
+    var eq = "(";
+	/*
     if (Math.random() > 0.5) {				// negative sign
       eq += '-';
     } // close if
 
-    line[i] += (Math.floor(Math.random()*A)+m).toString();	// number 1
+    eq += (Math.floor(Math.random()*A)+m).toString();	// number 1
 
     if (ySpot == 1) {							// first variable positon
       eq += y;
@@ -57,7 +57,7 @@ fuction equation2(y,A,m) {
       eq += y;
     }
 
-    line[i] += ")(";
+    eq += ")(";
 
     // negative sign	
     if (Math.random() > 0.5) {				
@@ -77,14 +77,14 @@ fuction equation2(y,A,m) {
     }
 
     eq += (Math.floor(Math.random()*A)+m).toString();	//  number 4
-    if (ySpot == 4) {							// fourth variable spot
+    if (ySpot == 0) {							// fourth variable spot
       eq += y;
     }
-  
+  */
   eq += ")"; 
   return eq;
 }
-*/
+
 
 
 function loadQuestion(qn) {
@@ -155,7 +155,7 @@ function loadQuestion(qn) {
           if (answer == mc[i]) {
             line[i] = "[" + mc[i] + "] " + aS;
           } else {
-            line[i] = "[" + mc[i] + "] " + "equation2(y,A,m)";
+            line[i] = "[" + mc[i] + "] " + equation2(y,A,m);
           }
         }
 		
