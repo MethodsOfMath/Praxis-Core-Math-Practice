@@ -11,7 +11,7 @@ var names = ["Scott", "Fred", "Elizabeth", "Kumar", "Harold", "Jensa", "Maria", 
 var sorry = ["Your answer does not match our answer. It could be in the different format. Is it simplified? Try again.","Try again."];
 var vardvars = ['x','y','z','a','b','c','k','m','n'];
 var mc = ['A','B','C','D','E'];
-var allThings = ["for each", "for all", "for every"];
+var allThings = ["for each", "for every"];
 var praises = ["Good job!", "Way to go!", "That is correct!", "Yippee!", "Yeah!", "Excellent! Keep it up!", "Awesome"];
 
 
@@ -164,7 +164,7 @@ function loadQuestion(qn) {
         }
 		
         question = "Which expression equals " + A + sign + m + y + " " + randomElementOf(allThings); 
-        question += " values of " + y + "?<br><br>";
+        question += " value of " + y + "?<br><br>";
 
         for (i = 0; i < line.length; i++) {
           question += line[i] + "<br><br>";
