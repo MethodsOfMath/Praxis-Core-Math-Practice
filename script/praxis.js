@@ -17,25 +17,22 @@ function randomElementOf(theArray) {
 
 function fillInTheBlank() {
    var thingie = '<textarea id="Response">Enter answer here</textarea>';
-   thingie += '<button onclick="checkAnswer(document.getElementById(Response).value)">Submit</button>';
+   thingie += '<button onclick="checkAnswer(99)">Submit</button>';
   document.getElementById("AnswerArea") = thingie;
 }
 
 function multipleChoice() {
    var thingie = "";
    for (i = 0; i < mc.length; i++) {
-   var thingie = '<button onclick="checkAnswer('+ mc[i] + ')">' + mc[i] + '</button>';
+   var thingie = '<button onclick="checkAnswer('+ i + ')">' + mc[i] + '</button>';
    }
   document.getElementById("AnswerArea") = thingie;
 }
 
-
-
-
 function loadQuestion(qn) {
     document.getElementById("Answer").innerHTML = "";
     document.getElementById("Response").value = "";
-    fillInTheBlank()
+    fillInTheBlank();
   if (qn == 1) {
   	
     var sides = [4,6,8,12,20];
@@ -60,13 +57,14 @@ function loadQuestion(qn) {
     }
     question += "What is the probability of rolling a " + owside + "?";
     question += "<br><br>Enter your answer as a fraction using the '/' symbol. i.e. 1/2.";
+    
     answer = "1/" + side;
+    
     explain = 'You can completely ignore the rolls. The probability does not depend on previous outcomes. ';
     explain += 'The key word here is "fair." In order for a dice to be fair, each outcome must have the same probabilty. ';
     explain += 'Rolling a ' + owside + ' is one outcome out of ' + side;
     explain += " possiblities. Therefore, the probability that you will roll a " + owside + " is 1/" + side + ".";
     
-  
     kurl = "https://www.khanacademy.org/math/precalculus/prob-comb/basic-prob-precalc/e/probability_1";
     
   } else if (qn == 2) {
@@ -74,17 +72,16 @@ function loadQuestion(qn) {
     answer = randomElementOf(mc);
     question = "The answer is " + answer;
     kurl = "khanacademy.org";
+    explain = question;
   }
   
   document.getElementById("Question").innerHTML = question;
   var longKhanString = 'For more practice, visit <a href=\"' + kurl + '" target="_blank">' + kurl + '</a>';
   document.getElementById("Khan").innerHTML = longKhanString;
-  
 }
                  
 function newQuestion() {
   Qn = Math.floor(Math.random()*totNumQuest)+1;
-  //Qn = 1;
   loadQuestion(Qn);
 }
 
@@ -105,8 +102,12 @@ function getExplain() {
 }
 
 
-function checkAnswer(respo) {
-  //respo = document.getElementById("Response").value;
+function checkAnswer(n) {
+  if (n == 99) {
+  respo = document.getElementById("Response").value;
+  } else {
+    respo = mc[n];
+  }
   if (respo == answer) {
     document.getElementById("Answer").innerHTML = randomElementOf(praises);
   } else {
