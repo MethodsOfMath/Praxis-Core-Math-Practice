@@ -167,7 +167,7 @@ function loadQuestion(qn) {
         explain = "You do not necessarily need to use FOIL. Since there are no variables in one set of the parentheses, ";
         explain += "You can simplify that first. Then you would only need to distribute the sum or difference. Note that ";
         explain += "we need a term with " + m + y + ". We would need to divide by " + D + " and multiply by " + m;
-        explain += " to get " + m + y + " in choice " + answer ". The " + y;
+        explain += " to get " + m + y + " in choice " + answer + ". The " + y;
         explain += " term in the other options ends up being too large.";
     }
   
