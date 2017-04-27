@@ -1,5 +1,5 @@
 var answer = "blank";  
-var totNumQuest = 1;
+var totNumQuest = 2;
 var Qn = 1;
 
 var names = ["Scott", "Fred", "Elizabeth", "Kumar", "Harold", "Jensa", "Maria", "Beth", "Steve", "Harry", "Lucy", 
@@ -8,14 +8,34 @@ var names = ["Scott", "Fred", "Elizabeth", "Kumar", "Harold", "Jensa", "Maria", 
 
 var praises = ["Good job!", "Way to go!", "That is correct!", "Yippee!", "Yeah!", "Keep it up!"];
 var sorry = ["Your answer does not match our answer. It could be in the different format. Is it simplified? Try again."];
+var vardvars = ['x','y','z','a','b','c','k','m','n'];
+var mc = ['A','B','C','D','E'];
 
 function randomElementOf(theArray) {
   return theArray[Math.floor(Math.random() * theArray.length)];
 }
 
+function fillInTheBlank() {
+   var thingie = '<textarea id="Response">Enter answer here</textarea>';
+   thingie += '<button onclick="checkAnswer(document.getElementById(Response).value)">Submit</button>';
+  document.getElementById("AnswerArea") = thingie;
+}
+
+function multipleChoice() {
+   var thingie = "";
+   for (i = 0; i < mc.length; i++) {
+   var thingie = '<button onclick="checkAnswer('+ mc[i] + ')">' + mc[i] + '</button>';
+   }
+  document.getElementById("AnswerArea") = thingie;
+}
+
+
+
+
 function loadQuestion(qn) {
     document.getElementById("Answer").innerHTML = "";
     document.getElementById("Response").value = "";
+    fillInTheBlank()
   if (qn == 1) {
   	
     var sides = [4,6,8,12,20];
@@ -49,7 +69,13 @@ function loadQuestion(qn) {
   
     kurl = "https://www.khanacademy.org/math/precalculus/prob-comb/basic-prob-precalc/e/probability_1";
     
+  } else if (qn == 2) {
+    multipleChoice();
+    answer = randomElementOf(mc);
+    question = "The answer is " + answer;
+    kurl = "khanacademy.org";
   }
+  
   document.getElementById("Question").innerHTML = question;
   var longKhanString = 'For more practice, visit <a href=\"' + kurl + '" target="_blank">' + kurl + '</a>';
   document.getElementById("Khan").innerHTML = longKhanString;
@@ -79,8 +105,8 @@ function getExplain() {
 }
 
 
-function checkAnswer() {
-  respo = document.getElementById("Response").value;
+function checkAnswer(respo) {
+  //respo = document.getElementById("Response").value;
   if (respo == answer) {
     document.getElementById("Answer").innerHTML = randomElementOf(praises);
   } else {
