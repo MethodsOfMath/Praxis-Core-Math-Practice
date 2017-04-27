@@ -18,7 +18,7 @@ function randomElementOf(theArray) {
 function fillInTheBlank() {
    var thingie = '<textarea id="Response">Enter answer here</textarea>';
    thingie += '<button onclick="checkAnswer(99)">Submit</button>';
-  document.getElementById("AnswerArea") = thingie;
+  document.getElementById("AnswerArea").innerHTML = thingie;
 }
 
 function multipleChoice() {
@@ -26,7 +26,7 @@ function multipleChoice() {
    for (i = 0; i < mc.length; i++) {
    var thingie = '<button onclick="checkAnswer('+ i + ')">' + mc[i] + '</button>';
    }
-  document.getElementById("AnswerArea") = thingie;
+  document.getElementById("AnswerArea").innerHTML = thingie;
 }
 
 function loadQuestion(qn) {
