@@ -66,6 +66,10 @@ function sameQuestion() {
   loadQuestion(Qn);
 }
 
+function hideWord() {
+  document.getElementById("Resonse").value = "";
+}
+
 function showAnswer() {
   document.getElementById("Answer").innerHTML = answer;
 }
