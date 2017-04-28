@@ -9,10 +9,10 @@ var names = ["Scott", "Fred", "Elizabeth", "Kumar", "Harold", "Jensa", "Maria", 
 
 
 var sorry = ["Your answer does not match our answer. It could be in the different format. Is it simplified? Try again.","Try again."];
-var vardvars = ['x','y','z','a','b','c','k','m','n'];
+var vardvars = ['x','y','z','a','b','c','k','n'];
 var mc = ['A','B','C','D','E'];
 var allThings = ["for each", "for every"];
-var praises = ["Good job!", "Way to go!", "That is correct!", "Yippee!", "Yeah!", "Excellent! Keep it up!", "Awesome"];
+var praises = ["Good job!", "Way to go!", "That is correct!", "Yippee!", "Yeah!", "Excellent! Keep it up!", "Awesome!"];
 
 
 function randomElementOf(theArray) {
@@ -177,7 +177,7 @@ function loadQuestion(qn) {
         explain += "You can simplify that first. Then you would only need to distribute the sum or difference. Note that ";
         explain += "we need a term with " + m + y + ". We would need to divide by " + D + " and multiply by " + m;
         explain += " to get " + m + y + " in choice " + answer + ". The " + y;
-        explain += " term in the other options ends up being too large.";
+        explain += " terms in the other options end up being too large.";
     }
   
   document.getElementById("Question").innerHTML = question;
